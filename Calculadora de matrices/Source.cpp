@@ -18,8 +18,11 @@ void suma();
 void resta();
 void multiplicacion();
 struct datos {
-	int x;
-	int y;
+	int x1;
+	int y1;
+	int x2;
+	int y2;
+	int n;
 };
 datos num[100];
 float m1[10][10];
@@ -64,69 +67,75 @@ void suma() {
 	cout << "2.Matriz 2°" << endl;
 	cout << "3.Mostrar resultados" << endl;
 	cout << "4.Salir" << endl;
-	int gox=20;//
-	int goy=8;//
 	cout << "Seleccione una opcion: ";
 	cin >> op;
 	switch (op) {
 	case '1':
 		cout << "filas= ";
-		cin >> num->x;
+		cin >> num->x1;
 		cout << "columnas= ";
-		cin >> num->y;
+		cin >> num->y1;
 		cout << "" << endl;
-		if ((num->x <= 10) && (num->y <= 10)) {
-			for (int i = 0; i < num->x; i++) {
-				for (int j = 0; j < num->y; j++) {
+		if ((num->x1 <= 10) && (num->y1 <= 10)) {
+			for (int i = 0; i < num->x1; i++) {
+				for (int j = 0; j < num->y1; j++) {
 					cout << "[" << i << "]" << "[" << j << "]= ";
 					cin >> m1[i][j];
 				}
 			}
 		}
 		else {
-			cout << "Tamaño invalido" << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "Tamaño invalido." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
 		}
 		suma();
 		break;
 
 	case '2':
 		cout << "filas= ";
-		cin >> num->x;
+		cin >> num->x2;
 		cout << "columnas= ";
-		cin >> num->y;
+		cin >> num->y2;
 		cout << "" << endl;
-		if ((num->x <= 10) && (num->y <= 10)) {
-			for (int i = 0; i < num->x; i++) {
-				for (int j = 0; j < num->y; j++) {
-					cout << "[" << i << "]" << "[" << j << "]= ";
-					cin >> m2[i][j];
+		if((num->x2==num->x1)&& (num->y2 == num->y1)){
+			if ((num->x2 <= 10) && (num->y2 <= 10)) {
+				for (int i = 0; i < num->x2; i++) {
+					for (int j = 0; j < num->y2; j++) {
+						cout << "[" << i << "]" << "[" << j << "]= ";
+							cin >> m2[i][j];
+					}
 				}
 			}
 		}
 		else {
-			cout << "Tamaño invalido" << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "La matriz 2 debe de ser del mismo tamaño que la 1." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
 		}
 		suma();
 		break;
 
 	case '3':
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				cout << "[" << m1[i][j] << "]" << " ";
 			}
 		}
 		cout << "\n+";
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				cout << "[" << m2[i][j] << "]" << " ";
 			}
 		}
 		cout << "\n=";
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				m3[i][j] = m1[i][j] + m2[i][j];
 				cout << "[" << m3[i][j] << "]" << " ";
 			}
@@ -150,69 +159,75 @@ void resta() {
 	cout << "2.Matriz 2°" << endl;
 	cout << "3.Mostrar resultados" << endl;
 	cout << "4.Salir" << endl;
-	int gox = 20;//
-	int goy = 8;//
 	cout << "Seleccione una opcion: ";
 	cin >> op;
 	switch (op) {
 	case '1':
 		cout << "filas= ";
-		cin >> num->x;
+		cin >> num->x1;
 		cout << "columnas= ";
-		cin >> num->y;
+		cin >> num->y1;
 		cout << "" << endl;
-		if ((num->x <= 10) && (num->y <= 10)) {
-			for (int i = 0; i < num->x; i++) {
-				for (int j = 0; j < num->y; j++) {
+		if ((num->x1 <= 10) && (num->y1 <= 10)) {
+			for (int i = 0; i < num->x1; i++) {
+				for (int j = 0; j < num->y1; j++) {
 					cout << "[" << i << "]" << "[" << j << "]= ";
 					cin >> m1[i][j];
 				}
 			}
 		}
 		else {
-			cout << "Tamaño invalido" << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "Tamaño invalido." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
 		}
 		resta();
 		break;
 
 	case '2':
 		cout << "filas= ";
-		cin >> num->x;
+		cin >> num->x2;
 		cout << "columnas= ";
-		cin >> num->y;
+		cin >> num->y2;
 		cout << "" << endl;
-		if ((num->x <= 10) && (num->y <= 10)) {
-			for (int i = 0; i < num->x; i++) {
-				for (int j = 0; j < num->y; j++) {
-					cout << "[" << i << "]" << "[" << j << "]= ";
-					cin >> m2[i][j];
+		if ((num->x2 == num->x1) && (num->y2 == num->y1)) {
+			if ((num->x2 <= 10) && (num->y2 <= 10)) {
+				for (int i = 0; i < num->x2; i++) {
+					for (int j = 0; j < num->y2; j++) {
+						cout << "[" << i << "]" << "[" << j << "]= ";
+						cin >> m2[i][j];
+					}
 				}
 			}
 		}
 		else {
-			cout << "Tamaño invalido" << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "La matriz 2 debe de ser del mismo tamaño que la 1." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
 		}
 		resta();
 		break;
 
 	case '3':
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				cout << "[" << m1[i][j] << "]" << " ";
 			}
 		}
 		cout << "\n-";
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				cout << "[" << m2[i][j] << "]" << " ";
 			}
 		}
 		cout << "\n=";
-		for (int i = 0; i < num->x; i++) {
+		for (int i = 0; i < num->x1; i++) {
 			cout << "\n";
-			for (int j = 0; j < num->y; j++) {
+			for (int j = 0; j < num->y1; j++) {
 				m3[i][j] = m1[i][j] - m2[i][j];
 				cout << "[" << m3[i][j] << "]" << " ";
 			}
@@ -229,5 +244,106 @@ void resta() {
 
 }
 void multiplicacion() {
+	system("cls");
+	cout << "-----Multiplicación-----" << endl;
+	cout << "Ingrese la longitud de la matriz" << endl;
+	cout << "1.Matriz 1°" << endl;
+	cout << "2.Matriz 2°" << endl;
+	cout << "3.Mostrar resultados" << endl;
+	cout << "4.Salir" << endl;
+	cout << "Seleccione una opcion: ";
+	cin >> op;
+	int m = num->x1;
+	int n = num->y1;
+	int p = num->y2;
+	switch (op) {
+	case '1':
+		cout << "filas= ";
+		cin >> num->x1;
+		cout << "columnas= ";
+		cin >> num->y1;
+		cout << "" << endl;
+		if ((num->x1 <= 10) && (num->y1 <= 10)) {
+			for (int i = 0; i < num->x1; i++) {
+				for (int j = 0; j < num->y1; j++) {
+					cout << "[" << i << "]" << "[" << j << "]= ";
+					cin >> m1[i][j];
+				}
+			}
+		}
+		else {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "Tamaño invalido." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
+		}
+		multiplicacion();
+		break;
+
+	case '2':
+		cout << "filas= ";
+		cin >> num->x2;
+		cout << "columnas= ";
+		cin >> num->y2;
+		cout << "" << endl;
+		if (num->y1 == num->x2) {
+			if ((num->x2 <= 10) && (num->y2 <= 10)) {
+				for (int i = 0; i < num->x2; i++) {
+					for (int j = 0; j < num->y2; j++) {
+						cout << "[" << i << "]" << "[" << j << "]= ";
+						cin >> m2[i][j];
+					}
+				}
+			}
+		}
+		else {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+			cout << "La y de la matriz 1 debe de ser igual a la x de la matriz 2." << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			system("pause");
+		}
+		multiplicacion();
+		break;
+
+	case '3':
+		for (int i = 0; i < num->x1; i++) {
+			cout << "\n";
+			for (int j = 0; j < num->y1; j++) {
+				cout << "[" << m1[i][j] << "]" << " ";
+			}
+		}
+		cout << "\n*";
+		for (int i = 0; i < num->x1; i++) {
+			cout << "\n";
+			for (int j = 0; j < num->y1; j++) {
+				cout << "[" << m2[i][j] << "]" << " ";
+			}
+		}
+		cout << "\n=";
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < p; j++) {
+				for (int k = 0; k < n; k++) {
+					m3[i][j] += m1[i][k] * m2[k][j];
+				}
+			}
+		}
+		for (int i = 0; i < m; ++i)
+		{
+			cout << "\n";
+			for (int j = 0; j < p; ++j)
+			{
+				cout << "[" << m3[i][j] << "]" << " ";
+			}
+		}
+
+		cout << "\n" << endl;
+		system("pause");
+		multiplicacion();
+		break;
+
+	case '4':
+		menu();
+		break;
+	}
 
 }
