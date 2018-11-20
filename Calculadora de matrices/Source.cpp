@@ -617,8 +617,7 @@ void quaterniones() {
 		rf[3] = roundf(rf[3] * 100) / 100;
 		rf[0] = (B[0][0]) + (B[1][1]) + (B[2][2]) + (B[3][3]);
 		rf[0] = roundf(rf[0] * 100) / 100;
-		cout << "Las nuevas coordenadas son:";
-		/*cout << "Coseno=" << coseno << endl;*/
+		cout << "Las nuevas coordenadas son: ";
 		cout << "i[" << rf[1] << "] " << "j[" << rf[2] << "] " << "k[" << rf[3] << "]" << endl;
 		system("pause");
 		quaterniones();
@@ -648,7 +647,7 @@ void mc() {
 	float rotacionz[4][4];
 	float TR[4][4];
 	float TRTN[4][4];
-	float matrizcompuesta[4][4];
+	float matrizcompuesta[10][10];
 	float puntos[10][10];
 	cin >> op;
 	switch (op) {
@@ -877,7 +876,7 @@ void mc() {
 	default:
 		menu();
 		break;
-	
+
 	}
 
 }
